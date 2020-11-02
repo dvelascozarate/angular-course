@@ -1,0 +1,14 @@
+<h1>
+    Resultados de búsqueda : <small>{{ condition }}</small>
+</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert" *ngIf="heroes.length == 0">
+            <p>No hay resultados para la búsqueda {{ condition }}</p>
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    <app-card (_showHero)="showHero($event)" [hero]="heroe" *ngFor="let heroe of heroes"></app-card>
+</div>
